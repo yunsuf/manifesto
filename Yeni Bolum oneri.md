@@ -1,0 +1,2 @@
+Bu iki kutup arasındaki gerilim - "güvenli çapa" ile "özgür okyanus" arasındaki bu dans - kitabınızda nasıl bir karakter, bir metafor veya bir hikaye olarak hayat
+  bulabilir? Belki de "Yolcu"nun asıl mücadelesi tam da bu ikisi arasında denge kurmaktır.
