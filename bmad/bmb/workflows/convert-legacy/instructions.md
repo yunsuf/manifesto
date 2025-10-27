@@ -1,7 +1,8 @@
 # Convert Legacy - v4 to v5 Conversion Instructions
 
-<critical>The workflow execution engine is governed by: {project_root}/bmad/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {project_root}/bmad/bmb/workflows/convert-legacy/workflow.yaml</critical>
+<critical>The workflow execution engine is governed by: {project-root}/bmad/core/tasks/workflow.xml</critical>
+<parameter name="You MUST have already loaded and processed: {project-root}/bmad/bmb/workflows/convert-legacy/workflow.yaml</critical>
+<critical>Communicate in {communication_language} throughout the conversion process</critical>
 
 <workflow>
 
@@ -66,8 +67,7 @@ For Modules:
 
 <step n="3" goal="Determine Target Module and Location">
 <ask>Which module should this belong to? (eg. bmm, bmb, cis, bmm-legacy, or custom)</ask>
-<check>If custom module:</check>
-  <ask>Enter custom module code (kebab-case):</ask>
+<action if="custom module"><ask>Enter custom module code (kebab-case):</ask></action>
 <action>Determine installation path based on type and module</action>
 <critical>IMPORTANT: All paths must use final BMAD installation locations, not src paths!</critical>
 <action>Show user the target location: {project-root}/bmad/{{target_module}}/{{item_type}}/{{item_name}}</action>
@@ -78,16 +78,19 @@ For Modules:
 <step n="4" goal="Choose Conversion Strategy">
 <action>Based on item type and complexity, choose approach:</action>
 
-<check>If agent conversion:</check>
-<check>If simple agent (basic persona + commands):</check>
-<action>Use direct conversion to v5 agent YAML format</action>
-<goto step="5a">Direct Agent Conversion</goto>
-<check>If complex agent with embedded workflows:</check>
-<action>Plan to invoke create-agent workflow</action>
-<goto step="5b">Workflow-Assisted Agent Creation</goto>
+<check if="agent conversion">
+  <check if="simple agent (basic persona + commands)">
+    <action>Use direct conversion to v5 agent YAML format</action>
+    <goto step="5a">Direct Agent Conversion</goto>
+  </check>
+  <check if="complex agent with embedded workflows">
+    <action>Plan to invoke create-agent workflow</action>
+    <goto step="5b">Workflow-Assisted Agent Creation</goto>
+  </check>
+</check>
 
-<check>If template or task conversion to workflow:</check>
-<action>Analyze the v4 item to determine workflow type:</action>
+<check if="template or task conversion to workflow">
+  <action>Analyze the v4 item to determine workflow type:</action>
 
 - Does it generate a specific document type? → Document workflow
 - Does it produce structured output files? → Document workflow
@@ -103,14 +106,14 @@ For Modules:
 4. Meta-workflow (coordinates other workflows)
    Select 1-4:</ask>
 
-<check>If template conversion:</check>
-<goto step="5c">Template-to-Workflow Conversion</goto>
-<check>If task conversion:</check>
-<goto step="5e">Task-to-Workflow Conversion</goto>
+<action if="template conversion"><goto step="5c">Template-to-Workflow Conversion</goto></action>
+<action if="task conversion"><goto step="5e">Task-to-Workflow Conversion</goto></action>
+</check>
 
-<check>If full module conversion:</check>
-<action>Plan to invoke create-module workflow</action>
-<goto step="5d">Module Creation</goto>
+<check if="full module conversion">
+  <action>Plan to invoke create-module workflow</action>
+  <goto step="5d">Module Creation</goto>
+</check>
 </step>
 
 <step n="5a" goal="Direct Agent Conversion" optional="true">
@@ -190,7 +193,7 @@ For Modules:
 
 2. Convert template sections to instructions.md:
    - Each YAML section → workflow step
-   - `elicit: true` → `<elicit-required/>` tag
+   - `elicit: true` → `<invoke-task halt="true">{project-root}/bmad/core/tasks/adv-elicit.xml</invoke-task>` tag
    - Conditional sections → `if="condition"` attribute
    - Repeatable sections → `repeat="for-each"` attribute
    - Section instructions → step content
@@ -205,6 +208,17 @@ For Modules:
    - Agent permissions → note in instructions
    - Processing flow → integrate into workflow steps
 
+<critical>When invoking create-workflow, the standard config block will be automatically added:</critical>
+
+```yaml
+# Critical variables from config
+config_source: '{project-root}/bmad/{{target_module}}/config.yaml'
+output_folder: '{config_source}:output_folder'
+user_name: '{config_source}:user_name'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+```
+
 <invoke-workflow>
   workflow: {project-root}/bmad/bmb/workflows/create-workflow/workflow.yaml
   inputs:
@@ -213,6 +227,9 @@ For Modules:
     - template_structure: {{extracted_template}}
     - instructions: {{converted_sections}}
 </invoke-workflow>
+
+<action>Verify the created workflow.yaml includes standard config block</action>
+<action>Update converted instructions to use config variables where appropriate</action>
 
 <goto step="6">Continue to Validation</goto>
 </step>
@@ -247,21 +264,34 @@ For Modules:
    - User interaction patterns → appropriate v5 tags
 
 3. Based on confirmed workflow type:
-   <check>If Document workflow:</check>
+   <check if="Document workflow">
    - Create template.md from output patterns
    - Map generation steps to instructions
-   - Add <template-output> tags for sections
+   - Add template-output tags for sections
+     </check>
 
-   <check>If Action workflow:</check>
-   - Set template: false in workflow.yaml
-   - Focus on action sequences in instructions
-   - Preserve execution logic
+   <check if="Action workflow">
+     - Set template: false in workflow.yaml
+     - Focus on action sequences in instructions
+     - Preserve execution logic
+   </check>
 
 4. Handle special v4 patterns:
-   - 1-9 elicitation menus → v5 <elicit-required/>
+   - 1-9 elicitation menus → v5 <invoke-task halt="true">{project-root}/bmad/core/tasks/adv-elicit.xml</invoke-task>
    - Agent permissions → note in instructions
    - YOLO mode → autonomous flag or optional steps
    - Critical notices → workflow.yaml comments
+
+<critical>When invoking create-workflow, the standard config block will be automatically added:</critical>
+
+```yaml
+# Critical variables from config
+config_source: '{project-root}/bmad/{{target_module}}/config.yaml'
+output_folder: '{config_source}:output_folder'
+user_name: '{config_source}:user_name'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+```
 
 <invoke-workflow>
   workflow: {project-root}/bmad/bmb/workflows/create-workflow/workflow.yaml
@@ -271,6 +301,9 @@ For Modules:
     - instructions: {{extracted_task_logic}}
     - template: {{generated_template_if_document}}
 </invoke-workflow>
+
+<action>Verify the created workflow.yaml includes standard config block</action>
+<action>Update converted instructions to use config variables where appropriate</action>
 
 <goto step="6">Continue to Validation</goto>
 </step>
@@ -292,6 +325,17 @@ For Workflows:
 - [ ] Template variables match
 - [ ] File structure correct
 
+**Standard Config Validation (Workflows):**
+
+- [ ] workflow.yaml contains standard config block:
+  - config_source defined
+  - output_folder, user_name, communication_language pulled from config
+  - date set to system-generated
+- [ ] Converted instructions use config variables where appropriate
+- [ ] Template includes config variables in metadata (if document workflow)
+- [ ] No hardcoded paths that should use {output_folder}
+- [ ] No generic greetings that should use {user_name}
+
 For Modules:
 
 - [ ] All components converted
@@ -301,9 +345,10 @@ For Modules:
 
 <action>Show validation results to user</action>
 <ask>Any issues to fix before finalizing? (y/n)</ask>
-<check>If yes:</check>
+<check if="yes">
 <action>Address specific issues</action>
 <goto step="6">Re-validate</goto>
+</check>
 </step>
 
 <step n="7" goal="Migration Report">
@@ -315,19 +360,18 @@ For Modules:
 - Warnings or notes
 
 <action>Save report to: {output_folder}/conversion-report-{{date}}.md</action>
+<action>Inform {user_name} in {communication_language} that the conversion report has been generated</action>
 </step>
 
 <step n="8" goal="Cleanup and Finalize">
 <ask>Archive original v4 files? (y/n)</ask>
-<check>If yes:</check>
-  <action>Move v4 files to: {project-root}/archive/v4-legacy/{{date}}/</action>
+<action if="yes">Move v4 files to: {project-root}/archive/v4-legacy/{{date}}/</action>
 
 <action>Show user the final converted items and their locations</action>
 <action>Provide any post-conversion instructions or recommendations</action>
 
 <ask>Would you like to convert another legacy item? (y/n)</ask>
-<check>If yes:</check>
-<goto step="1">Start new conversion</goto>
+<action if="yes"><goto step="1">Start new conversion</goto></action>
 </step>
 
 </workflow>
