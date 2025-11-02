@@ -1,7 +1,7 @@
 installation:
-  version: 6.0.0-alpha.0
-  installDate: '2025-10-27T23:37:59.115Z'
-  lastUpdated: '2025-10-27T23:37:59.115Z'
+  version: 6.0.0-alpha.3
+  installDate: '2025-11-02T22:41:02.817Z'
+  lastUpdated: '2025-11-02T22:41:02.817Z'
 modules:
   - core
   - bmb
