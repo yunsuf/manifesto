@@ -12,7 +12,30 @@
 
 4.  Bu iki çelişkili fısıltı aynı anda Evren'e ulaştığında, Evren hangisine cevap vereceğini bilemez. Bu yüzden bir "duvar" örerek Yolcu'ya en merhametli cevabı verir: "Dur ve dinle. İçindeki iki ayrı sesi duy. Teklifin, kendi içinde henüz bir anlaşmaya varamamış. Sen kendi içinde bütünleşmeden, ben seninle nasıl bütünleşebilirim?" Direnç, bir reddediş değil, Yolcu'yu kendi içine dönmeye, ruhunun en dürüst ve en çıplak haliyle yüzleşmeye davet eden bir çağrıdır. Bu, Yolcu'nun kendi teklifini yeniden müzakere etmesi için bir fırsattır.
 
+
+*Uzun yıllardır adil ve dürüst ticaretiyle tanınan bilge bir tüccar vardı. Dükkanına gelen herkes, onun hassas terazisinin asla yanılmadığını bilirdi. Tüccar, işlerini büyütmeye, şehrin en büyük pazarında yeni bir dükkan açmaya karar verdi. Tüm birikimini, tüm iradesini bu hedefe yöneltti. Anlaşmalar yapıldı, en iyi ustalarla konuşuldu, her şey yolunda görünüyordu.*
+
+*Tam o sırada, akıl almaz bir şey oldu. Yıllardır tıkır tıkır işleyen her şey ters gitmeye başladı, o aşılmaz duvar tam karşısındaydı.*
+
+*Tüccar öfkelenmedi, isyan etmedi. Dükkanını kapattı ve kırılan terazinin iki parçasını alıp sessizliğe çekildi. "Niyetin Aynası"nı kurdu. Bir yana parlak hedefini koydu: "Büyümek, daha çok kazanmak, daha büyük olmak."*
+
+*Diğer yana ise cesaretle gölgeleri çağırdı. "Eğer büyürsem," diye fısıldadı, "dükkanıma gelen her bir müşteriyle ettiğim o tatlı sohbeti kaybederim. Eğer en büyük olursam, bu hassas teraziyi kullanmayı bırakıp, kaba ve ruhsuz hesaplara dalmaktan korkarım. Ben aslında büyümek değil, zanaatımı, yani 'adil ticaret sanatını' daha derinden icra etmek istiyorum."*
+
+*İşte o an, kırık terazinin sırrını anladı. Terazi, ona "büyüme" ile "zanaat" arasındaki içsel bölünmüşlüğünü gösteriyordu. Bilinçli olarak daha büyük bir dükkan isterken, ruhu o küçük dükkandaki samimiyeti ve adaleti korumak için direniyordu.*
+
+*Yeni bir teklifle masaya döndü. Artık hedefi sadece büyümek değildi. Yeni hedefi şuydu: "Adil ticaret sanatını ve insanlarla kurduğum bu samimi bağı kaybetmeden nasıl büyüyebilirim?"*
+
+*Bu bütünleşik niyetle yola çıktığında, cevap kendiliğinden geldi. Yeni bir dükkan açmak yerine, şehrin en yetenekli gençlerini yanına alarak onlara adil ticaretin ve o hassas terazinin sırlarını öğrettiği bir lonca, bir okul kurdu. Kendisi yine küçük dükkanında kaldı ama bilgeliği, yetiştirdiği onlarca dürüst tüccar aracılığıyla tüm şehre yayıldı. O, en büyük olmadı; ama zanaatını onu ölümsüz kıldı.*
+
+Kusursuz bir "Elif" harfi çizmeyi arzulayan usta bir Hattat düşünün. Sanatının zirvesinde, ilahi bir ilhamla dolar ve hayatının eserini yaratmak için kamış kalemini eline alır. Tüm iradesini, tüm dikkatini, tüm varlığını o tek, mükemmel çizgide yoğunlaştırır. Nefesini tutar. Ve tam kalemi kağıda değdirdiği an, elinde hafif, kontrol edemediği bir titreme belirir ve çizgi hafifçe kusurlu olur. Öfkelenir, yeniden dener. Bu kez daha da fazla odaklanır, iradesini bir çelik gibi sertleştirir. Ama titreme daha da güçlenir. Mükemmelliğe ulaşma arzusu, mükemmelsizliğin kaynağı haline gelmiştir.
+Hattat'ın karşısındaki duvar, dışarıdaki bir rüzgar ya da bozuk bir kalem değildir. Duvar, kendi iradesinin aşırı gücüdür. Mermerdeki damar, keskinin kendisinden başkası değildir. "Kusursuz olmalı" emri, bedene "hata yapma!" korkusunu fısıldar ve bu korku, eli titreten zehrin ta kendisidir.
+
+İşte o an Hattat, keskisini bırakır. Anlar ki sorun, daha sert vurmak ya da kalemi daha sıkı tutmak değildir. Sorun, "çizme" eyleminin kendisini bir güç gösterisine dönüştürmesidir.
+
+
 **Niyetin Aynası: Ruhun Muhasebesi**
+
+
 
 5.  Bu daveti kabul eden Yolcu, müzakere masasından bir anlığına kalkar. Dışarıdaki diyaloğu susturur ve içeriye, kendi ruhunun sessiz meclisine çekilir. Bu, bir yenilgi anı değil, bir arınma ve yeniden hizalanma ritüelidir. Yolcu, burada "Niyetin Aynası" adını verdiği bir içsel muhasebe yapar.
 

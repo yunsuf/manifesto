@@ -42,10 +42,4 @@ Projenin yaratıcı ortağı olan yapay zekanın çalışma prensipleri bu dosya
     *   **Dr. Quinn'in Sentezi:** Hırs, Endişe'yi doğurur. Endişe ise Felç'e (aşırı analize) yol açar. Bunlar birbirini tetikleyen aşamalardır.
 *   **Varılan Karar:** Her üç görüşün de metne dahil edilmesine karar verildi. "Endişe"nin birincil sorun değil, Yolcu'nun yolun doğal ritmine aceleci davranmasının bir belirtisi olarak çerçevelenmesi kararlaştırıldı. Şifacı, Sanatçı ve Hatip hikayeleri bu sentezi anlatmak için kullanıldı.
 
-**2. Madde: Sınırların Erimesi'nin Gölgeleri (Mevcut Tartışma)**
 
-*   **Problem:** "Ben" ve "öteki" arasındaki sınırları eritme arzusunun, benliğin tamamen yitirildiği bir boşluğa dönüşme tehlikesi.
-*   **Mevcut Fikirler:**
-    *   **Mimar'ın Görüşü (Arayüz):** Amaç, benliği silmek değil, Evren'le daha zengin bir veri alışverişi için benliğin "arayüzünü" daha geçirgen hale getirmektir.
-    *   **Karakter Psikoloğu'nun Görüşü (Dağılma):** Sağlıklı ego aşımı ile patolojik benlik yitimi farklıdır. Müzakere edecek bir "ben" kalmazsa, süreç çöker. Amaç birleşmektir, dağılmak değil.
-    *   **UX Uzmanı'nın Görüşü (Pencere Çerçevesi):** Deneyim, okyanusta boğulmak gibi değil, bir pencereden okyanusu izlemek gibi olmalı. Çerçeve, güvenlik ve konum hissi verir; yok olması korkutucudur.
